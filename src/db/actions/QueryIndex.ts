@@ -13,12 +13,24 @@ export class QueryIndex implements BaseAction {
     public client: Client;
 
     public async checkIndexOrCreate(): Promise<void> {
-        const isMappingBlockExisted = await this.client.indices.exists({ index: "block" });
-        const isMappingParcelExisted = await this.client.indices.exists({ index: "parcel" });
-        const isMappingTransactionExisted = await this.client.indices.exists({ index: "transaction" });
-        const isMappingPendingParcelExisted = await this.client.indices.exists({ index: "pending_parcel" });
-        const isMappingLogExisted = await this.client.indices.exists({ index: "log" });
-        const isMappingAccountExisted = await this.client.indices.exists({ index: "account" });
+        const isMappingBlockExisted = await this.client.indices.exists({
+            index: "block"
+        });
+        const isMappingParcelExisted = await this.client.indices.exists({
+            index: "parcel"
+        });
+        const isMappingTransactionExisted = await this.client.indices.exists({
+            index: "transaction"
+        });
+        const isMappingPendingParcelExisted = await this.client.indices.exists({
+            index: "pending_parcel"
+        });
+        const isMappingLogExisted = await this.client.indices.exists({
+            index: "log"
+        });
+        const isMappingAccountExisted = await this.client.indices.exists({
+            index: "account"
+        });
         if (!isMappingBlockExisted) {
             await this.client.indices.create({
                 index: "block"

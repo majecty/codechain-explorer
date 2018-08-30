@@ -26,5 +26,5 @@ export class ServerContext {
 
     public destroy = async () => {
         // Do nothing
-    }
+    };
 }

@@ -1,4 +1,4 @@
-import { faCircle } from '@fortawesome/free-solid-svg-icons'
+import { faCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import * as React from "react";
 
@@ -24,35 +24,39 @@ class NodeStatus extends React.Component<Props, {}> {
                 </div>
                 <div className="data-set-for-status">
                     <div className="one-line-data-set">
+                        <div>Node status</div>
                         <div>
-                            Node status
-                        </div>
-                        <div>
-                            {
-                                nodeStatus.isCodeChainRunning ?
-                                    <span className="running"><FontAwesomeIcon icon={faCircle} /> Running</span> :
-                                    <span className="text-danger"><FontAwesomeIcon icon={faCircle} /> Stopped</span>
-                            }
+                            {nodeStatus.isCodeChainRunning ? (
+                                <span className="running">
+                                    <FontAwesomeIcon icon={faCircle} /> Running
+                                </span>
+                            ) : (
+                                <span className="text-danger">
+                                    <FontAwesomeIcon icon={faCircle} /> Stopped
+                                </span>
+                            )}
                         </div>
                     </div>
                     <hr />
                     <div className="one-line-data-set">
+                        <div>Server status</div>
                         <div>
-                            Server status
-                        </div>
-                        <div>
-                            {
-                                nodeStatus.isServerRunning ?
-                                    <span className="running"><FontAwesomeIcon icon={faCircle} /> Running</span> :
-                                    <span className="text-danger"><FontAwesomeIcon icon={faCircle} /> Stopped</span>
-                            }
+                            {nodeStatus.isServerRunning ? (
+                                <span className="running">
+                                    <FontAwesomeIcon icon={faCircle} /> Running
+                                </span>
+                            ) : (
+                                <span className="text-danger">
+                                    <FontAwesomeIcon icon={faCircle} /> Stopped
+                                </span>
+                            )}
                         </div>
                     </div>
                     <hr />
                 </div>
             </div>
-        )
+        );
     }
-};
+}
 
 export default NodeStatus;

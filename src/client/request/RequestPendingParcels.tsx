@@ -23,26 +23,43 @@ type Props = OwnProps & DispatchProps;
 
 class RequestPendingParcelsInternal extends React.Component<Props> {
     public componentWillMount() {
-        const { onPendingParcels, onError, dispatch, actionFilters, signerFiter, sorting, orderBy, page, itmesPerPage } = this.props;
+        const {
+            onPendingParcels,
+            onError,
+            dispatch,
+            actionFilters,
+            signerFiter,
+            sorting,
+            orderBy,
+            page,
+            itmesPerPage
+        } = this.props;
         if (actionFilters.length === 0) {
             onPendingParcels([]);
         }
-        let path = `parcels/pending?page=${page}&itemsPerPage=${itmesPerPage}&actionFilters=${actionFilters.join(",")}&sorting=${sorting}&orderBy=${orderBy}`
+        let path = `parcels/pending?page=${page}&itemsPerPage=${itmesPerPage}&actionFilters=${actionFilters.join(
+            ","
+        )}&sorting=${sorting}&orderBy=${orderBy}`;
         if (signerFiter) {
             path += `&signerFiter=${signerFiter}`;
         }
-        apiRequest({ path, dispatch, showProgressBar: true }).then((response: any) => {
-            onPendingParcels(response);
-        }).catch(onError);
+        apiRequest({ path, dispatch, showProgressBar: true })
+            .then((response: any) => {
+                onPendingParcels(response);
+            })
+            .catch(onError);
     }
 
     public render() {
-        return (null);
+        return null;
     }
 }
 
-const RequestPendingParcels = connect(null, ((dispatch: Dispatch) => {
-    return { dispatch }
-}))(RequestPendingParcelsInternal);
+const RequestPendingParcels = connect(
+    null,
+    (dispatch: Dispatch) => {
+        return { dispatch };
+    }
+)(RequestPendingParcelsInternal);
 
 export default RequestPendingParcels;

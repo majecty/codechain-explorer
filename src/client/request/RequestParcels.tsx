@@ -20,18 +20,27 @@ type Props = OwnProps & DispatchProps;
 class RequestParcelsInternal extends React.Component<Props> {
     public componentWillMount() {
         const { onError, onParcels, dispatch, page, itemsPerPage } = this.props;
-        apiRequest({ path: `parcels?page=${page}&itemsPerPage=${itemsPerPage}`, dispatch, showProgressBar: true }).then((response: any) => {
-            onParcels(response);
-        }).catch(onError);
+        apiRequest({
+            path: `parcels?page=${page}&itemsPerPage=${itemsPerPage}`,
+            dispatch,
+            showProgressBar: true
+        })
+            .then((response: any) => {
+                onParcels(response);
+            })
+            .catch(onError);
     }
 
     public render() {
-        return (null);
+        return null;
     }
 }
 
-const RequestParcels = connect(null, ((dispatch: Dispatch) => {
-    return { dispatch }
-}))(RequestParcelsInternal);
+const RequestParcels = connect(
+    null,
+    (dispatch: Dispatch) => {
+        return { dispatch };
+    }
+)(RequestParcelsInternal);
 
 export default RequestParcels;

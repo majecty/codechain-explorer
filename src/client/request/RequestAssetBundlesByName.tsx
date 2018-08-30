@@ -19,18 +19,27 @@ type Props = OwnProps & DispatchProps;
 class RequestAssetBundlesByNameInternal extends React.Component<Props> {
     public componentWillMount() {
         const { assetName, onAssetBundles, onError, dispatch } = this.props;
-        apiRequest({ path: `search/asset/${assetName}`, dispatch, showProgressBar: false }).then((response: AssetBundleDoc[]) => {
-            onAssetBundles(response);
-        }).catch(onError);
+        apiRequest({
+            path: `search/asset/${assetName}`,
+            dispatch,
+            showProgressBar: false
+        })
+            .then((response: AssetBundleDoc[]) => {
+                onAssetBundles(response);
+            })
+            .catch(onError);
     }
 
     public render() {
-        return (null);
+        return null;
     }
 }
 
-const RequestAssetBundlesByName = connect(null, ((dispatch: Dispatch) => {
-    return { dispatch }
-}))(RequestAssetBundlesByNameInternal);
+const RequestAssetBundlesByName = connect(
+    null,
+    (dispatch: Dispatch) => {
+        return { dispatch };
+    }
+)(RequestAssetBundlesByNameInternal);
 
 export default RequestAssetBundlesByName;

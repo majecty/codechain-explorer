@@ -20,22 +20,39 @@ type Props = OwnProps & DispatchProps;
 
 class RequestPendingAssetSchemeInternal extends React.Component<Props> {
     public componentWillMount() {
-        const { dispatch, assetType, onAssetScheme, onAssetSchemeNotExist, onError, progressBarTarget } = this.props;
-        apiRequest({ path: `asset/pending/${assetType}`, dispatch, progressBarTarget, showProgressBar: true }).then((response: AssetSchemeDoc) => {
-            if (response === null) {
-                return onAssetSchemeNotExist();
-            }
-            const assetScheme = response;
-            onAssetScheme(assetScheme, assetType);
-        }).catch(onError);
+        const {
+            dispatch,
+            assetType,
+            onAssetScheme,
+            onAssetSchemeNotExist,
+            onError,
+            progressBarTarget
+        } = this.props;
+        apiRequest({
+            path: `asset/pending/${assetType}`,
+            dispatch,
+            progressBarTarget,
+            showProgressBar: true
+        })
+            .then((response: AssetSchemeDoc) => {
+                if (response === null) {
+                    return onAssetSchemeNotExist();
+                }
+                const assetScheme = response;
+                onAssetScheme(assetScheme, assetType);
+            })
+            .catch(onError);
     }
 
     public render() {
-        return (null);
+        return null;
     }
 }
-const RequestPendingAssetScheme = connect(null, ((dispatch: Dispatch) => {
-    return { dispatch }
-}))(RequestPendingAssetSchemeInternal);
+const RequestPendingAssetScheme = connect(
+    null,
+    (dispatch: Dispatch) => {
+        return { dispatch };
+    }
+)(RequestPendingAssetSchemeInternal);
 
 export default RequestPendingAssetScheme;

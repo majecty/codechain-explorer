@@ -17,18 +17,27 @@ type Props = OwnProps & DispatchProps;
 class RequestTotalParcelCountInternal extends React.Component<Props> {
     public componentWillMount() {
         const { onError, onParcelTotalCount, dispatch } = this.props;
-        apiRequest({ path: `parcels/totalCount`, dispatch, showProgressBar: true }).then((response: any) => {
-            onParcelTotalCount(response);
-        }).catch(onError);
+        apiRequest({
+            path: `parcels/totalCount`,
+            dispatch,
+            showProgressBar: true
+        })
+            .then((response: any) => {
+                onParcelTotalCount(response);
+            })
+            .catch(onError);
     }
 
     public render() {
-        return (null);
+        return null;
     }
 }
 
-const RequestTotalParcelCount = connect(null, ((dispatch: Dispatch) => {
-    return { dispatch }
-}))(RequestTotalParcelCountInternal);
+const RequestTotalParcelCount = connect(
+    null,
+    (dispatch: Dispatch) => {
+        return { dispatch };
+    }
+)(RequestTotalParcelCountInternal);
 
 export default RequestTotalParcelCount;

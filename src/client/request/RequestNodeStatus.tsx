@@ -4,8 +4,8 @@ import { connect, Dispatch } from "react-redux";
 import { ApiError, apiRequest } from "./ApiRequest";
 
 export interface NodeStatusData {
-    isCodeChainRunning: boolean,
-    isServerRunning: boolean,
+    isCodeChainRunning: boolean;
+    isServerRunning: boolean;
 }
 
 interface OwnProps {
@@ -30,23 +30,34 @@ class RequestNodeStatusInternal extends React.Component<Props> {
     }
 
     public render() {
-        return (null);
+        return null;
     }
 
     private requestNodeStat = async () => {
         const { onNodeStatus, dispatch } = this.props;
-        const codechainPing = await apiRequest({ path: `status/ping/codechain`, dispatch, showProgressBar: true });
-        const serverPing = await apiRequest({ path: `status/ping/server`, dispatch, showProgressBar: true });
+        const codechainPing = await apiRequest({
+            path: `status/ping/codechain`,
+            dispatch,
+            showProgressBar: true
+        });
+        const serverPing = await apiRequest({
+            path: `status/ping/server`,
+            dispatch,
+            showProgressBar: true
+        });
 
         onNodeStatus({
             isCodeChainRunning: codechainPing === "pong",
             isServerRunning: serverPing === "pong"
-        })
-    }
+        });
+    };
 }
 
-const RequestNodeStatus = connect(null, ((dispatch: Dispatch) => {
-    return { dispatch }
-}))(RequestNodeStatusInternal);
+const RequestNodeStatus = connect(
+    null,
+    (dispatch: Dispatch) => {
+        return { dispatch };
+    }
+)(RequestNodeStatusInternal);
 
 export default RequestNodeStatus;

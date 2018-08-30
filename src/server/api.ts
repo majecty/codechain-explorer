@@ -16,15 +16,13 @@ const corsOptions = {
     origin: true,
     credentials: true,
     exposedHeaders: ["Location", "Link"]
-}
+};
 
 export function createApiRouter(context: ServerContext, useCors = false) {
     const router = express.Router();
 
     if (useCors) {
-        router
-            .options("*", cors(corsOptions))
-            .use(cors(corsOptions));
+        router.options("*", cors(corsOptions)).use(cors(corsOptions));
     }
 
     BlockAction.handle(context, router);

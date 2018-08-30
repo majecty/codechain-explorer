@@ -20,23 +20,35 @@ type Props = OwnProps & DispatchProps;
 
 class RequestAssetTransferAddressUTXOInternal extends React.Component<Props> {
     public componentWillMount() {
-        const { address, onUTXO, onError, dispatch, lastTransactionHash, itemsPerPage } = this.props;
+        const {
+            address,
+            onUTXO,
+            onError,
+            dispatch,
+            lastTransactionHash,
+            itemsPerPage
+        } = this.props;
         let path = `addr-asset-utxo/${address}?itemsPerPage=${itemsPerPage}`;
         if (lastTransactionHash) {
             path += `&lastTransactionHash=${lastTransactionHash}`;
         }
-        apiRequest({ path, dispatch, showProgressBar: true }).then((response: AssetBundleDoc[]) => {
-            onUTXO(response);
-        }).catch(onError);
+        apiRequest({ path, dispatch, showProgressBar: true })
+            .then((response: AssetBundleDoc[]) => {
+                onUTXO(response);
+            })
+            .catch(onError);
     }
 
     public render() {
-        return (null);
+        return null;
     }
 }
 
-const RequestAssetTransferAddressUTXO = connect(null, ((dispatch: Dispatch) => {
-    return { dispatch }
-}))(RequestAssetTransferAddressUTXOInternal);
+const RequestAssetTransferAddressUTXO = connect(
+    null,
+    (dispatch: Dispatch) => {
+        return { dispatch };
+    }
+)(RequestAssetTransferAddressUTXOInternal);
 
 export default RequestAssetTransferAddressUTXO;

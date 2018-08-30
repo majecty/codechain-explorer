@@ -13,10 +13,12 @@ export enum WeeklyLogType {
 
 interface OwnProps {
     type: WeeklyLogType;
-    onData: (weeklyLog: Array<{
-        x: string,
-        y: string
-    }>) => void;
+    onData: (
+        weeklyLog: Array<{
+            x: string;
+            y: string;
+        }>
+    ) => void;
     onError: (e: ApiError) => void;
 }
 
@@ -32,7 +34,7 @@ class RequestWeeklyLogsInternal extends React.Component<Props> {
     }
 
     public render() {
-        return (null);
+        return null;
     }
 
     private queryWeekLog = async () => {
@@ -50,26 +52,35 @@ class RequestWeeklyLogsInternal extends React.Component<Props> {
                 break;
         }
         try {
-            const asyncJobs = _.map(_.reverse(_.range(7)), async (index) => {
-                const momentObject = moment().utc().subtract(index, "days");
+            const asyncJobs = _.map(_.reverse(_.range(7)), async index => {
+                const momentObject = moment()
+                    .utc()
+                    .subtract(index, "days");
                 const dateString = momentObject.format("YYYY-MM-DD");
                 const resultDateString = momentObject.format("MM-DD");
-                const count = await apiRequest({ path: `${query}?date=${dateString}`, dispatch, showProgressBar: true }) as string;
+                const count = (await apiRequest({
+                    path: `${query}?date=${dateString}`,
+                    dispatch,
+                    showProgressBar: true
+                })) as string;
                 return {
                     x: resultDateString,
                     y: count
-                }
+                };
             });
             const results = await Promise.all(asyncJobs);
             onData(results);
         } catch (e) {
-            onError(e)
+            onError(e);
         }
-    }
+    };
 }
 
-const RequestWeeklyLogs = connect(null, ((dispatch: Dispatch) => {
-    return { dispatch }
-}))(RequestWeeklyLogsInternal);
+const RequestWeeklyLogs = connect(
+    null,
+    (dispatch: Dispatch) => {
+        return { dispatch };
+    }
+)(RequestWeeklyLogsInternal);
 
 export default RequestWeeklyLogs;

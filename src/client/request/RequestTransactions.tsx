@@ -19,19 +19,34 @@ type Props = OwnProps & DispatchProps;
 
 class RequestTransactionsInternal extends React.Component<Props> {
     public componentWillMount() {
-        const { onError, onTransactions, dispatch, page, itemsPerPage } = this.props;
-        apiRequest({ path: `txs?page=${page}&itemsPerPage=${itemsPerPage}`, dispatch, showProgressBar: true }).then((response: any) => {
-            onTransactions(response);
-        }).catch(onError);
+        const {
+            onError,
+            onTransactions,
+            dispatch,
+            page,
+            itemsPerPage
+        } = this.props;
+        apiRequest({
+            path: `txs?page=${page}&itemsPerPage=${itemsPerPage}`,
+            dispatch,
+            showProgressBar: true
+        })
+            .then((response: any) => {
+                onTransactions(response);
+            })
+            .catch(onError);
     }
 
     public render() {
-        return (null);
+        return null;
     }
 }
 
-const RequestTransactions = connect(null, ((dispatch: Dispatch) => {
-    return { dispatch }
-}))(RequestTransactionsInternal);
+const RequestTransactions = connect(
+    null,
+    (dispatch: Dispatch) => {
+        return { dispatch };
+    }
+)(RequestTransactionsInternal);
 
 export default RequestTransactions;

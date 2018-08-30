@@ -5,16 +5,24 @@ import { H256 } from "codechain-sdk/lib/core/classes";
 
 function handle(context: ServerContext, router: Router) {
     router.get("/blockNumber", async (req, res, next) => {
-        context.db.getLastBlockNumber().then(n => {
-            res.send(n.toString());
-        }).catch(next);
+        context.db
+            .getLastBlockNumber()
+            .then(n => {
+                res.send(n.toString());
+            })
+            .catch(next);
     });
 
     router.get("/block/:blockNumber/hash", async (req, res, next) => {
         const { blockNumber } = req.params;
-        context.db.getBlock(Number.parseInt(blockNumber)).then(hash => {
-            res.send(hash === null ? JSON.stringify(null) : JSON.stringify(hash));
-        }).catch(next);
+        context.db
+            .getBlock(Number.parseInt(blockNumber))
+            .then(hash => {
+                res.send(
+                    hash === null ? JSON.stringify(null) : JSON.stringify(hash)
+                );
+            })
+            .catch(next);
     });
 
     router.get("/block/:id", async (req, res, next) => {
@@ -55,4 +63,4 @@ function handle(context: ServerContext, router: Router) {
 
 export const BlockAction = {
     handle
-}
+};
