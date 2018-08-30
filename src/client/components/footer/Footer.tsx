@@ -1,7 +1,7 @@
-import * as React from "react";
-import { Container, Row, Col } from "reactstrap";
+import { faGithub, faGitter, faMedium, faTwitter } from "@fortawesome/free-brands-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGithub, faGitter, faTwitter, faMedium } from "@fortawesome/free-brands-svg-icons"
+import * as React from "react";
+import { Col, Container, Row } from "reactstrap";
 import "./Footer.scss";
 import * as codechainIcon from "./img/codechain-icon.svg"
 

@@ -1,21 +1,21 @@
+import * as QRCode from "qrcode.react"
 import * as React from "react";
 import { match } from "react-router";
-import { Container, Row, Col } from "reactstrap";
+import { Col, Container, Row } from "reactstrap";
 import { Error } from "../../components/error/Error/Error";
-import * as QRCode from "qrcode.react"
 
 import { U256 } from "codechain-sdk/lib/core/classes"
-import { RequestPlatformAddressAccount, RequestPlatformAddressParcels, RequestPlatformAddressAssets, RequestTotalPlatformAssetCount, RequestTotalPlatformParcelCount, RequestTotalPlatformBlockCount } from "../../request";
-import RequestPlatformAddressBlocks from "../../request/RequestPlatformAddressBlocks";
-import AccountDetails from "../../components/platformAddress/AccountDetails/AccountDetails";
-import BlockList from "../../components/block/BlockList/BlockList";
+import { AssetBundleDoc, BlockDoc, ParcelDoc } from "../../../db/DocType";
 import AssetList from "../../components/asset/AssetList/AssetList";
+import BlockList from "../../components/block/BlockList/BlockList";
 import ParcelList from "../../components/parcel/ParcelList/ParcelList";
-import { ParcelDoc, AssetBundleDoc, BlockDoc } from "../../../db/DocType";
+import AccountDetails from "../../components/platformAddress/AccountDetails/AccountDetails";
+import { RequestPlatformAddressAccount, RequestPlatformAddressAssets, RequestPlatformAddressParcels, RequestTotalPlatformAssetCount, RequestTotalPlatformBlockCount, RequestTotalPlatformParcelCount } from "../../request";
+import RequestPlatformAddressBlocks from "../../request/RequestPlatformAddressBlocks";
 
-import "./PlatformAddress.scss"
-import { ImageLoader } from "../../components/util/ImageLoader/ImageLoader";
 import CopyButton from "../../components/util/CopyButton/CopyButton";
+import { ImageLoader } from "../../components/util/ImageLoader/ImageLoader";
+import "./PlatformAddress.scss"
 
 interface Props {
     match: match<{ address: string }>;

@@ -1,19 +1,19 @@
-import * as React from "react";
 import * as moment from "moment";
+import * as React from "react";
 import { match } from "react-router";
-import { Container, Row, Col } from "reactstrap";
+import { Col, Container, Row } from "reactstrap";
 import { Error } from "../../components/error/Error/Error";
 
-import { RequestTransaction } from "../../request";
 import TransactionDetails from "../../components/transaction/TransactionDetails/TransactionDetails";
+import { RequestTransaction } from "../../request";
 
-import "./Transaction.scss";
-import TransactionSummary from "../../components/transaction/TransactionSummary/TransactionSummary";
 import { TransactionDoc } from "../../../db/DocType";
-import RequestPendingTransaction from "../../request/RequestPendingTransaction";
 import { PendingTransactionDoc } from "../../../db/DocType";
-import HexString from "../../components/util/HexString/HexString";
+import TransactionSummary from "../../components/transaction/TransactionSummary/TransactionSummary";
 import CopyButton from "../../components/util/CopyButton/CopyButton";
+import HexString from "../../components/util/HexString/HexString";
+import RequestPendingTransaction from "../../request/RequestPendingTransaction";
+import "./Transaction.scss";
 
 interface Props {
     match: match<{ hash: string }>;

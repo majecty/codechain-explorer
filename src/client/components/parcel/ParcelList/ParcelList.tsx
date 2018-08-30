@@ -1,17 +1,17 @@
-import * as React from "react";
-import * as moment from "moment";
+import { faChevronCircleDown, faChevronCircleRight, faSquare } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSquare, faChevronCircleRight, faChevronCircleDown } from '@fortawesome/free-solid-svg-icons'
 import * as _ from "lodash";
+import * as moment from "moment";
+import * as React from "react";
 
-import "./ParcelList.scss"
-import HexString from "../../util/HexString/HexString";
-import { Row, Col } from "reactstrap";
-import { ParcelDoc, Type, PaymentDoc, ChangeShardStateDoc, SetRegularKeyDoc } from "../../../../db/DocType";
 import { Link } from "react-router-dom";
+import { Col, Row } from "reactstrap";
+import { ChangeShardStateDoc, ParcelDoc, PaymentDoc, SetRegularKeyDoc, Type } from "../../../../db/DocType";
+import { changeQuarkStringToCCC } from "../../../utils/Formatter";
 import { ActionBadge } from "../../util/ActionBadge/ActionBadge";
 import { CommaNumberString } from "../../util/CommaNumberString/CommaNumberString";
-import { changeQuarkStringToCCC } from "../../../utils/Formatter";
+import HexString from "../../util/HexString/HexString";
+import "./ParcelList.scss"
 
 interface Props {
     parcels: ParcelDoc[];

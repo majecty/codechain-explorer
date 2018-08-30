@@ -1,8 +1,8 @@
-import * as React from "react";
 import * as _ from "lodash";
+import * as React from "react";
 
-import { Dispatch, connect } from "react-redux";
-import { apiRequest, ApiError } from "./ApiRequest";
+import { connect, Dispatch } from "react-redux";
+import { ApiError, apiRequest } from "./ApiRequest";
 
 export enum DailyLogType {
     BEST_MINER = "BEST_MINER",

@@ -1,9 +1,9 @@
-import * as React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircle } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import * as React from "react";
 
-import "./NodeStatus.scss";
 import { NodeStatusData } from "../../../request/RequestNodeStatus";
+import "./NodeStatus.scss";
 
 interface Props {
     nodeStatus: NodeStatusData;

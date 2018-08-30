@@ -1,9 +1,9 @@
-import * as React from "react";
-import * as moment from "moment";
 import * as _ from "lodash";
+import * as moment from "moment";
+import * as React from "react";
 
-import { Dispatch, connect } from "react-redux";
-import { apiRequest, ApiError } from "./ApiRequest";
+import { connect, Dispatch } from "react-redux";
+import { ApiError, apiRequest } from "./ApiRequest";
 
 export enum WeeklyLogType {
     BLOCK_COUNT = "BLOCK_COUNT",

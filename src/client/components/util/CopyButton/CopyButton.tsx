@@ -1,8 +1,8 @@
-import * as React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCopy } from '@fortawesome/free-solid-svg-icons'
-import { Popover, PopoverBody } from "reactstrap";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import * as React from "react";
 import * as CopyToClipboard from "react-copy-to-clipboard";
+import { Popover, PopoverBody } from "reactstrap";
 import "./CopyButton.scss";
 
 interface Props {

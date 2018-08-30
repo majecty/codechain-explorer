@@ -6,25 +6,25 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./index.scss";
 
+import Footer from "./components/footer/Footer";
+import Header from "./components/header/Header/Header";
+import ScrollToTop from "./components/util/ScrollToTop/ScrollToTop";
+import Asset from "./pages/Asset/Asset";
+import AssetTransferAddress from "./pages/AssetTransferAddress/AssetTransferAddress";
+import Block from "./pages/Block/Block";
+import Blocks from "./pages/Blocks/Blocks";
+import Home from "./pages/Home/Home";
+import NotFound from "./pages/NotFound/NotFound";
+import Parcel from "./pages/Parcel/Parcel";
+import Parcels from "./pages/Parcels/Parcels";
+import PendingParcels from "./pages/PendingParcels/PendingParcels";
+import PlatformAddress from "./pages/PlatformAddress/PlatformAddress";
+import SendSignedParcel from "./pages/SendSignedParcel";
+import Status from "./pages/Status/Status";
+import Transaction from "./pages/Transaction/Transaction";
+import Transactions from "./pages/Transactions/Transactions";
 import { store } from "./redux/store";
 import RegisterServiceWorker from "./register_service_worker";
-import Block from "./pages/Block/Block";
-import Header from "./components/header/Header/Header";
-import Home from "./pages/Home/Home";
-import Parcel from "./pages/Parcel/Parcel";
-import Asset from "./pages/Asset/Asset";
-import Status from "./pages/Status/Status";
-import SendSignedParcel from "./pages/SendSignedParcel";
-import Transaction from "./pages/Transaction/Transaction";
-import Footer from "./components/footer/Footer";
-import PlatformAddress from "./pages/PlatformAddress/PlatformAddress";
-import AssetTransferAddress from "./pages/AssetTransferAddress/AssetTransferAddress";
-import PendingParcels from "./pages/PendingParcels/PendingParcels";
-import Parcels from "./pages/Parcels/Parcels";
-import Transactions from "./pages/Transactions/Transactions";
-import Blocks from "./pages/Blocks/Blocks";
-import NotFound from "./pages/NotFound/NotFound";
-import ScrollToTop from "./components/util/ScrollToTop/ScrollToTop";
 
 ReactDOM.render(
     <Provider store={store}>

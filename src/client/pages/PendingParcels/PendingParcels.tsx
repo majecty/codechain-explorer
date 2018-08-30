@@ -1,19 +1,19 @@
-import * as React from "react";
+import { faAngleDoubleLeft, faAngleDoubleRight, faAngleLeft, faAngleRight, faCaretDown, faCaretUp, faFilter } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import * as _ from "lodash";
 import * as moment from "moment";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFilter, faCaretUp, faCaretDown, faAngleDoubleLeft, faAngleLeft, faAngleDoubleRight, faAngleRight } from "@fortawesome/free-solid-svg-icons";
-import { Container, Table } from "reactstrap";
+import * as React from "react";
 import { Redirect } from "react-router";
+import { Container, Table } from "reactstrap";
 import * as emptyImage from "./img/empty.png"
 
 import { RequestPendingParcels, RequestTotalPendingParcelCount } from "../../request";
 
-import "./PendingParcels.scss";
-import { PendingParcelDoc, Type, ChangeShardStateDoc } from "../../../db/DocType";
+import { Link } from "react-router-dom";
+import { ChangeShardStateDoc, PendingParcelDoc, Type } from "../../../db/DocType";
 import { ActionBadge } from "../../components/util/ActionBadge/ActionBadge";
 import HexString from "../../components/util/HexString/HexString";
-import { Link } from "react-router-dom";
+import "./PendingParcels.scss";
 
 interface State {
     pendingParcels: PendingParcelDoc[];

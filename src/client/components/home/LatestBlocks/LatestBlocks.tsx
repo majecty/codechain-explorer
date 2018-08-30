@@ -1,12 +1,12 @@
-import * as React from "react";
 import * as _ from "lodash";
 import * as moment from "moment";
-import { Table } from "reactstrap";
+import * as React from "react";
 import { Link } from "react-router-dom";
+import { Table } from "reactstrap";
 
-import "./LatestBlocks.scss";
 import { BlockDoc } from "../../../../db/DocType";
 import { CommaNumberString } from "../../util/CommaNumberString/CommaNumberString";
+import "./LatestBlocks.scss";
 
 interface Props {
     blocks: BlockDoc[]

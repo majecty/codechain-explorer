@@ -1,9 +1,9 @@
+import { H256 } from "codechain-sdk/lib/core/classes";
+import { Client, CountResponse, SearchResponse } from "elasticsearch";
 import * as _ from "lodash";
 import { BlockDoc } from "../DocType";
-import { SearchResponse, Client, CountResponse } from "elasticsearch";
-import { H256 } from "codechain-sdk/lib/core/classes";
-import { BaseAction } from "./BaseAction";
 import { ElasticSearchAgent } from "../ElasticSearchAgent";
+import { BaseAction } from "./BaseAction";
 
 export class QueryBlock implements BaseAction {
     public agent: ElasticSearchAgent;

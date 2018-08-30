@@ -1,8 +1,8 @@
 import * as React from "react";
-import { Row, Col } from "reactstrap";
+import { Col, Row } from "reactstrap";
 
-import "./ChainInfo.scss";
 import { CodeChainData } from "../../../request/RequestCodeChainStatus";
+import "./ChainInfo.scss";
 
 interface Props {
     chainInfo: CodeChainData

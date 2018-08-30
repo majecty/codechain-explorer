@@ -1,12 +1,12 @@
-import { getMappingBlock } from "../mappings/mapping_block";
-import { getMappingParcel } from "../mappings/mapping_parcel";
-import { getMappingTransaction } from "../mappings/mapping_transaction";
-import { getMappingPendingParcel } from "../mappings/mapping_pending_parcel";
-import { BaseAction } from "./BaseAction";
-import { ElasticSearchAgent } from "../ElasticSearchAgent";
 import { Client } from "elasticsearch";
-import { getMappingLog } from "../mappings/mapping_log";
+import { ElasticSearchAgent } from "../ElasticSearchAgent";
 import { getAccountMapping } from "../mappings/mapping_account";
+import { getMappingBlock } from "../mappings/mapping_block";
+import { getMappingLog } from "../mappings/mapping_log";
+import { getMappingParcel } from "../mappings/mapping_parcel";
+import { getMappingPendingParcel } from "../mappings/mapping_pending_parcel";
+import { getMappingTransaction } from "../mappings/mapping_transaction";
+import { BaseAction } from "./BaseAction";
 
 export class QueryIndex implements BaseAction {
     public agent: ElasticSearchAgent;

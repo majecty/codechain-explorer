@@ -1,9 +1,9 @@
-import * as React from "react";
 import * as _ from "lodash";
-import { Dispatch, connect } from "react-redux";
+import * as React from "react";
+import { connect, Dispatch } from "react-redux";
 
-import { apiRequest, ApiError } from "./ApiRequest";
 import { BlockDoc } from "../../db/DocType";
+import { ApiError, apiRequest } from "./ApiRequest";
 
 interface OwnProps {
     onBlockDifficulty: (difficulty: Array<{ x: string, y: string }>) => void;

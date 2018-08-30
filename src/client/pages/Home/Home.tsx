@@ -1,14 +1,14 @@
-import * as React from "react";
 import * as _ from "lodash";
-import { RequestBlockNumber, RequestBlock, RequestBlocks, RequestParcels, RequestTransactions } from "../../request";
+import * as React from "react";
 import { Container } from "reactstrap";
 import LatestBlocks from "../../components/home/LatestBlocks/LatestBlocks";
 import LatestParcels from "../../components/home/LatestParcels/LatestParcels";
 import LatestTransactions from "../../components/home/LatestTransactions/LatestTransactions";
+import { RequestBlock, RequestBlockNumber, RequestBlocks, RequestParcels, RequestTransactions } from "../../request";
 
-import "./Home.scss"
-import { BlockDoc, ParcelDoc, TransactionDoc, Type, ChangeShardStateDoc } from "../../../db/DocType";
+import { BlockDoc, ChangeShardStateDoc, ParcelDoc, TransactionDoc, Type } from "../../../db/DocType";
 import Summary from "../../components/home/Summary/Summary";
+import "./Home.scss"
 
 interface State {
     bestBlockNumber?: number;

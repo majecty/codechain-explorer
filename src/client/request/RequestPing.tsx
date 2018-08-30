@@ -1,7 +1,7 @@
 import * as React from "react";
-import { Dispatch, connect } from "react-redux";
+import { connect, Dispatch } from "react-redux";
 
-import { apiRequest, ApiError } from "./ApiRequest";
+import { ApiError, apiRequest } from "./ApiRequest";
 
 interface OwnProps {
     onPong: () => void;

@@ -1,19 +1,19 @@
-import * as React from "react";
 import * as _ from "lodash";
+import * as React from "react";
 
 import { connect, Dispatch } from "react-redux";
 import { Col, Row } from "reactstrap";
 import { RootState } from "../../../redux/actions";
 
-import "./TransactionDetails.scss"
-import HexString from "../../util/HexString/HexString";
-import { TransactionDoc, Type, AssetTransferTransactionDoc, AssetMintTransactionDoc } from "../../../../db/DocType";
-import { Script } from "codechain-sdk/lib/core/classes";
 import { Buffer } from "buffer";
+import { Script } from "codechain-sdk/lib/core/classes";
 import { Link } from "react-router-dom";
+import { AssetMintTransactionDoc, AssetTransferTransactionDoc, TransactionDoc, Type } from "../../../../db/DocType";
+import HexString from "../../util/HexString/HexString";
 import { ImageLoader } from "../../util/ImageLoader/ImageLoader";
-import { TypeBadge } from "../../util/TypeBadge/TypeBadge";
 import { StatusBadge } from "../../util/StatusBadge/StatusBadge";
+import { TypeBadge } from "../../util/TypeBadge/TypeBadge";
+import "./TransactionDetails.scss"
 
 interface Props {
     transaction: TransactionDoc;

@@ -1,9 +1,9 @@
 import * as React from "react";
 
-import "./AssetDetails.scss"
-import { AssetSchemeDoc, Type } from "../../../../db/DocType";
-import { Row, Col } from "reactstrap";
 import { Link } from "react-router-dom";
+import { Col, Row } from "reactstrap";
+import { AssetSchemeDoc, Type } from "../../../../db/DocType";
+import "./AssetDetails.scss"
 
 interface OwnProps {
     assetType: string;

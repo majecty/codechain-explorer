@@ -1,11 +1,11 @@
-import * as React from "react";
-import * as _ from "lodash";
-import { connect, Dispatch } from "react-redux";
 import { H256 } from "codechain-sdk/lib/core/classes";
+import * as _ from "lodash";
+import * as React from "react";
+import { connect, Dispatch } from "react-redux";
 
+import { AssetMintTransactionDoc, ChangeShardStateDoc, ParcelDoc, Type } from "../../db/DocType";
 import { RootState } from "../redux/actions";
 import { ApiError, apiRequest } from "./ApiRequest";
-import { ParcelDoc, ChangeShardStateDoc, Type, AssetMintTransactionDoc } from "../../db/DocType";
 
 interface OwnProps {
     hash: string;

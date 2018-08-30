@@ -2,14 +2,14 @@ import * as React from "react";
 
 import { Col, Row } from "reactstrap";
 
-import "./ParcelDetails.scss"
-import HexString from "../../util/HexString/HexString";
-import { ParcelDoc, Type, PaymentDoc, SetRegularKeyDoc, ChangeShardStateDoc, CreateShardDoc } from "../../../../db/DocType";
 import { Link } from "react-router-dom";
-import { ActionBadge } from "../../util/ActionBadge/ActionBadge";
-import { StatusBadge } from "../../util/StatusBadge/StatusBadge";
-import { CommaNumberString } from "../../util/CommaNumberString/CommaNumberString";
+import { ChangeShardStateDoc, CreateShardDoc, ParcelDoc, PaymentDoc, SetRegularKeyDoc, Type } from "../../../../db/DocType";
 import { changeQuarkStringToCCC } from "../../../utils/Formatter";
+import { ActionBadge } from "../../util/ActionBadge/ActionBadge";
+import { CommaNumberString } from "../../util/CommaNumberString/CommaNumberString";
+import HexString from "../../util/HexString/HexString";
+import { StatusBadge } from "../../util/StatusBadge/StatusBadge";
+import "./ParcelDetails.scss"
 
 interface Props {
     parcel: ParcelDoc;

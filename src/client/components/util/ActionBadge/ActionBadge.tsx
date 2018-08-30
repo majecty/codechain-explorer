@@ -1,6 +1,6 @@
-import * as React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSquare } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import * as React from "react";
 import { ParcelDoc } from "../../../../db/DocType";
 
 interface Props {

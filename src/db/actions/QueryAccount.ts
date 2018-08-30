@@ -1,8 +1,8 @@
-import * as _ from "lodash";
-import { Client } from "elasticsearch";
-import { BaseAction } from "./BaseAction";
-import { ElasticSearchAgent } from "../ElasticSearchAgent";
 import { BigNumber } from "bignumber.js";
+import { Client } from "elasticsearch";
+import * as _ from "lodash";
+import { ElasticSearchAgent } from "../ElasticSearchAgent";
+import { BaseAction } from "./BaseAction";
 
 export interface Account {
     address: string,

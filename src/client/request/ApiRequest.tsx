@@ -1,5 +1,5 @@
 import { Dispatch } from "react-redux";
-import { showLoading, hideLoading } from "react-redux-loading-bar";
+import { hideLoading, showLoading } from "react-redux-loading-bar";
 
 interface ApiRequestData {
     path: string;

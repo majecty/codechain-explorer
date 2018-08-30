@@ -3,9 +3,9 @@ import { connect, Dispatch } from "react-redux";
 
 import { H256 } from "codechain-sdk/lib/core/classes";
 
-import { apiRequest, ApiError } from "./ApiRequest";
-import { RootState } from "../redux/actions";
 import { AssetSchemeDoc, Type } from "../../db/DocType";
+import { RootState } from "../redux/actions";
+import { ApiError, apiRequest } from "./ApiRequest";
 
 interface OwnProps {
     assetType: string;

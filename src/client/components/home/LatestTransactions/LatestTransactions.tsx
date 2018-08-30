@@ -1,14 +1,14 @@
-import * as React from "react";
 import * as _ from "lodash";
 import * as moment from "moment";
+import * as React from "react";
 import { Table } from "reactstrap";
 
-import "./LatestTransactions.scss";
-import HexString from "../../util/HexString/HexString";
-import { Type, AssetMintTransactionDoc, AssetTransferTransactionDoc, TransactionDoc } from "../../../../db/DocType";
 import { Link } from "react-router-dom";
-import { TypeBadge } from "../../util/TypeBadge/TypeBadge";
+import { AssetMintTransactionDoc, AssetTransferTransactionDoc, TransactionDoc, Type } from "../../../../db/DocType";
+import HexString from "../../util/HexString/HexString";
 import { ImageLoader } from "../../util/ImageLoader/ImageLoader";
+import { TypeBadge } from "../../util/TypeBadge/TypeBadge";
+import "./LatestTransactions.scss";
 
 interface Props {
     transactions: TransactionDoc[];

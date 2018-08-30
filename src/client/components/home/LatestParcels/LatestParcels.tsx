@@ -1,15 +1,15 @@
-import * as React from "react";
 import * as _ from "lodash";
 import * as moment from "moment";
+import * as React from "react";
 import { Table } from "reactstrap";
 
-import "./LatestParcels.scss";
-import HexString from "../../util/HexString/HexString";
-import { ParcelDoc } from "../../../../db/DocType";
 import { Link } from "react-router-dom";
+import { ParcelDoc } from "../../../../db/DocType";
+import { changeQuarkStringToCCC } from "../../../utils/Formatter";
 import { ActionBadge } from "../../util/ActionBadge/ActionBadge";
 import { CommaNumberString } from "../../util/CommaNumberString/CommaNumberString";
-import { changeQuarkStringToCCC } from "../../../utils/Formatter";
+import HexString from "../../util/HexString/HexString";
+import "./LatestParcels.scss";
 
 interface Props {
     parcels: ParcelDoc[]

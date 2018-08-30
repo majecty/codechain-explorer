@@ -1,20 +1,20 @@
-import * as React from "react";
-import * as moment from "moment";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSquare } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import * as _ from "lodash";
+import * as moment from "moment";
+import * as React from "react";
 import { match } from "react-router";
-import { Container, Row, Col } from "reactstrap";
+import { Col, Container, Row } from "reactstrap";
 import { Error } from "../../components/error/Error/Error";
 
-import { RequestParcel, RequestPendingParcel } from "../../request";
 import ParcelDetails from "../../components/parcel/ParcelDetails/ParcelDetails";
+import { RequestParcel, RequestPendingParcel } from "../../request";
 
-import "./Parcel.scss";
+import { ChangeShardStateDoc, ParcelDoc, PendingParcelDoc, Type } from "../../../db/DocType";
 import TransactionList from "../../components/transaction/TransactionList/TransactionList";
-import { ParcelDoc, Type, ChangeShardStateDoc, PendingParcelDoc } from "../../../db/DocType";
-import HexString from "../../components/util/HexString/HexString";
 import CopyButton from "../../components/util/CopyButton/CopyButton";
+import HexString from "../../components/util/HexString/HexString";
+import "./Parcel.scss";
 
 interface Props {
     match: match<{ hash: string }>;

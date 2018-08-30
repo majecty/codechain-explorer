@@ -1,8 +1,8 @@
 import * as React from "react";
 import { connect, Dispatch } from "react-redux";
 
-import { apiRequest, ApiError } from "./ApiRequest";
 import { TransactionDoc } from "../../db/DocType";
+import { ApiError, apiRequest } from "./ApiRequest";
 
 interface OwnProps {
     itemsPerPage: number;

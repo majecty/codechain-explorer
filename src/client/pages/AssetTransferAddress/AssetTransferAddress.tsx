@@ -1,19 +1,19 @@
-import * as React from "react";
 import * as QRCode from "qrcode.react"
+import * as React from "react";
 
 import { match } from "react-router";
-import { Container, Row, Col } from "reactstrap";
+import { Col, Container, Row } from "reactstrap";
 
-import { RequestAssetTransferAddressUTXO, RequestAssetTransferAddressTransactions } from "../../request";
-import { TransactionDoc, AssetBundleDoc } from "../../../db/DocType";
+import { AssetBundleDoc, TransactionDoc } from "../../../db/DocType";
+import { RequestAssetTransferAddressTransactions, RequestAssetTransferAddressUTXO } from "../../request";
 
-import "./AssetTransferAddress.scss";
-import AddressDetails from "../../components/assetTransferAddress/AddressDetails/AddressDetails";
 import AssetList from "../../components/asset/AssetList/AssetList";
+import AddressDetails from "../../components/assetTransferAddress/AddressDetails/AddressDetails";
 import TransactionList from "../../components/transaction/TransactionList/TransactionList";
-import { ImageLoader } from "../../components/util/ImageLoader/ImageLoader";
 import CopyButton from "../../components/util/CopyButton/CopyButton";
+import { ImageLoader } from "../../components/util/ImageLoader/ImageLoader";
 import ReqeustTotalTransferTransactionCount from "../../request/RequestTotalTransferTransactionCount";
+import "./AssetTransferAddress.scss";
 
 interface Props {
     match: match<{ address: string }>;

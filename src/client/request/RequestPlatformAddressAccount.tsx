@@ -1,9 +1,9 @@
 import * as React from "react";
-import { Dispatch, connect } from "react-redux";
+import { connect, Dispatch } from "react-redux";
 
 import { U256 } from "codechain-sdk/lib/core/classes";
 
-import { apiRequest, ApiError } from "./ApiRequest";
+import { ApiError, apiRequest } from "./ApiRequest";
 
 interface OwnProps {
     address: string;

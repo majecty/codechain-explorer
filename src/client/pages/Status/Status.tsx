@@ -1,15 +1,15 @@
 import * as React from "react";
-import { Container, Row, Col } from "reactstrap";
+import { Col, Container, Row } from "reactstrap";
 
-import "./Status.scss";
-import NodeStatus from "../../components/status/NodeStatus/NodeStatus";
-import SyncStatus from "../../components/status/SyncStatus/SyncStatus";
 import ChainInfo from "../../components/status/ChainInfo/ChainInfo";
 import DifficultyChart from "../../components/status/DifficultyChart/DifficultyChart";
+import NodeStatus from "../../components/status/NodeStatus/NodeStatus";
+import SyncStatus from "../../components/status/SyncStatus/SyncStatus";
+import RequestBlockDifficulty from "../../request/RequestBlockDifficulty";
+import RequestCodeChainStatus, { CodeChainData } from "../../request/RequestCodeChainStatus";
 import RequestNodeStatus, { NodeStatusData } from "../../request/RequestNodeStatus";
 import RequestSyncStatus, { SyncData } from "../../request/RequestSyncStatus";
-import RequestCodeChainStatus, { CodeChainData } from "../../request/RequestCodeChainStatus";
-import RequestBlockDifficulty from "../../request/RequestBlockDifficulty";
+import "./Status.scss";
 
 interface State {
     nodeStatus?: NodeStatusData;

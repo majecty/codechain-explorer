@@ -1,7 +1,7 @@
 import * as React from "react";
-import { Container, Navbar, NavbarBrand, NavbarToggler, Nav, NavItem, NavLink, Collapse, UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem } from "reactstrap";
-import { IndexLinkContainer } from "react-router-bootstrap";
 import LoadingBar from "react-redux-loading-bar";
+import { IndexLinkContainer } from "react-router-bootstrap";
+import { Collapse, Container, DropdownItem, DropdownMenu, DropdownToggle, Nav, Navbar, NavbarBrand, NavbarToggler, NavItem, NavLink, UncontrolledDropdown } from "reactstrap";
 import HealthChecker from "../../util/HealthChecker/HealthChecker";
 import Search from "../Search/Search";
 

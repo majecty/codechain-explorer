@@ -1,17 +1,17 @@
-import * as React from "react";
+import { faAngleDoubleLeft, faAngleDoubleRight, faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import * as _ from "lodash";
 import * as moment from "moment";
-import { Container, Table } from "reactstrap";
+import * as React from "react";
 import { Redirect } from "react-router";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAngleDoubleLeft, faAngleLeft, faAngleDoubleRight, faAngleRight } from "@fortawesome/free-solid-svg-icons";
+import { Container, Table } from "reactstrap";
 
-import { RequestTransactions, RequestTotalTransactionCount } from "../../request";
-import "./Transactions.scss";
-import { TransactionDoc, Type, AssetMintTransactionDoc, AssetTransferTransactionDoc } from "../../../db/DocType";
-import { TypeBadge } from "../../components/util/TypeBadge/TypeBadge";
+import { AssetMintTransactionDoc, AssetTransferTransactionDoc, TransactionDoc, Type } from "../../../db/DocType";
 import HexString from "../../components/util/HexString/HexString";
 import { ImageLoader } from "../../components/util/ImageLoader/ImageLoader";
+import { TypeBadge } from "../../components/util/TypeBadge/TypeBadge";
+import { RequestTotalTransactionCount, RequestTransactions } from "../../request";
+import "./Transactions.scss";
 
 interface State {
     transactions: TransactionDoc[];

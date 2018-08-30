@@ -1,7 +1,7 @@
 import * as React from "react";
-import { Container, Row, Col } from "reactstrap";
-import * as errorMonster from "./img/error-monster.png";
+import { Col, Container, Row } from "reactstrap";
 import "./Error.scss";
+import * as errorMonster from "./img/error-monster.png";
 
 interface Props {
     title: string;

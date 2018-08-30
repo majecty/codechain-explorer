@@ -1,9 +1,9 @@
+import { H256 } from "codechain-sdk/lib/core/classes";
+import { Client, CountResponse, SearchResponse } from "elasticsearch";
 import * as _ from "lodash";
 import { ParcelDoc } from "../DocType";
-import { H256 } from "codechain-sdk/lib/core/classes";
-import { BaseAction } from "./BaseAction";
 import { ElasticSearchAgent } from "../ElasticSearchAgent";
-import { Client, SearchResponse, CountResponse } from "elasticsearch";
+import { BaseAction } from "./BaseAction";
 
 export class QueryParcel implements BaseAction {
     public agent: ElasticSearchAgent;

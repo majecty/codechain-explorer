@@ -1,13 +1,13 @@
-import * as React from "react";
 import * as _ from "lodash";
+import * as React from "react";
 
 import { Col, Row } from "reactstrap";
 
-import "./BlockDetails.scss"
-import HexString from "../../util/HexString/HexString";
-import { BlockDoc, Type, ChangeShardStateDoc } from "../../../../db/DocType";
 import { Link } from "react-router-dom";
+import { BlockDoc, ChangeShardStateDoc, Type } from "../../../../db/DocType";
 import { CommaNumberString } from "../../util/CommaNumberString/CommaNumberString";
+import HexString from "../../util/HexString/HexString";
+import "./BlockDetails.scss"
 
 interface OwnProps {
     block: BlockDoc;

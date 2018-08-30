@@ -1,10 +1,10 @@
+import { H256 } from "codechain-sdk/lib/core/classes";
 import * as React from "react";
 import { connect, Dispatch } from "react-redux";
-import { H256 } from "codechain-sdk/lib/core/classes";
 
+import { AssetMintTransactionDoc, TransactionDoc, Type } from "../../db/DocType";
 import { RootState } from "../redux/actions";
 import { ApiError, apiRequest } from "./ApiRequest";
-import { TransactionDoc, Type, AssetMintTransactionDoc } from "../../db/DocType";
 
 interface OwnProps {
     hash: string;

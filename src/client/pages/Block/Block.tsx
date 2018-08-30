@@ -1,21 +1,21 @@
-import * as React from "react";
-import * as moment from "moment";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSquare } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import * as _ from "lodash";
+import * as moment from "moment";
+import * as React from "react";
 import { match } from "react-router";
-import { Container, Col, Row } from "reactstrap";
+import { Col, Container, Row } from "reactstrap";
 import { Error } from "../../components/error/Error/Error";
 
-import { RequestBlock } from "../../request";
 import BlockDetails from "../../components/block/BlockDetails/BlockDetails";
 import ParcelList from "../../components/parcel/ParcelList/ParcelList";
+import { RequestBlock } from "../../request";
 
-import "./Block.scss";
-import { BlockDoc, Type, ChangeShardStateDoc } from "../../../db/DocType";
 import { Link } from "react-router-dom";
-import HexString from "../../components/util/HexString/HexString";
+import { BlockDoc, ChangeShardStateDoc, Type } from "../../../db/DocType";
 import CopyButton from "../../components/util/CopyButton/CopyButton";
+import HexString from "../../components/util/HexString/HexString";
+import "./Block.scss";
 
 interface State {
     block?: BlockDoc;

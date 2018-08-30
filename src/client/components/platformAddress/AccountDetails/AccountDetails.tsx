@@ -1,9 +1,9 @@
-import * as React from "react";
 import { U256 } from "codechain-sdk/lib/core/classes";
-import { Row, Col } from "reactstrap";
+import * as React from "react";
+import { Col, Row } from "reactstrap";
 
-import "./AccountDetails.scss";
 import { CommaNumberString } from "../../util/CommaNumberString/CommaNumberString";
+import "./AccountDetails.scss";
 
 interface OwnProps {
     account: {

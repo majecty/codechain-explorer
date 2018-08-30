@@ -1,20 +1,20 @@
-import * as React from "react";
 import * as _ from "lodash";
 import * as moment from "moment";
+import * as React from "react";
 
-import { Row, Col } from "reactstrap";
+import { Col, Row } from "reactstrap";
 
+import { faChevronCircleDown, faChevronCircleRight } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronCircleRight, faChevronCircleDown } from '@fortawesome/free-solid-svg-icons'
 
-import "./TransactionList.scss"
 import HexString from "../../util/HexString/HexString";
+import "./TransactionList.scss"
 
-import { TransactionDoc, Type, AssetMintTransactionDoc, AssetTransferTransactionDoc } from "../../../../db/DocType";
-import { Link } from "react-router-dom";
 import { H256 } from "codechain-sdk/lib/core/classes";
-import { TypeBadge } from "../../util/TypeBadge/TypeBadge";
+import { Link } from "react-router-dom";
+import { AssetMintTransactionDoc, AssetTransferTransactionDoc, TransactionDoc, Type } from "../../../../db/DocType";
 import { ImageLoader } from "../../util/ImageLoader/ImageLoader";
+import { TypeBadge } from "../../util/TypeBadge/TypeBadge";
 
 interface Props {
     owner?: string;

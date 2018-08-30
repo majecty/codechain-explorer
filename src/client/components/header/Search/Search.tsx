@@ -1,17 +1,17 @@
-import * as React from "react";
-import * as _ from "lodash";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
-import { Form, FormGroup, Button, Popover, PopoverBody } from "reactstrap";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import * as _ from "lodash";
+import * as React from "react";
+import * as Autosuggest from "react-autosuggest";
 import LoadingBar from "react-redux-loading-bar";
 import { Redirect } from "react-router";
-import * as Autosuggest from "react-autosuggest";
+import { Button, Form, FormGroup, Popover, PopoverBody } from "reactstrap";
 
-import "./Search.scss";
-import { RequestBlock, RequestParcel, RequestTransaction, RequestAssetScheme, RequestPlatformAddressAccount, RequestPendingParcel, RequestPendingTransaction, RequestAssetTransferAddressTransactions, RequestAssetBundlesByName } from "../../../request";
-import { BlockDoc, ParcelDoc, TransactionDoc, AssetSchemeDoc, PendingParcelDoc, PendingTransactionDoc, AssetBundleDoc, Type } from "../../../../db/DocType";
-import { U256, H256 } from "codechain-sdk/lib/core/classes";
+import { H256, U256 } from "codechain-sdk/lib/core/classes";
+import { AssetBundleDoc, AssetSchemeDoc, BlockDoc, ParcelDoc, PendingParcelDoc, PendingTransactionDoc, TransactionDoc, Type } from "../../../../db/DocType";
+import { RequestAssetBundlesByName, RequestAssetScheme, RequestAssetTransferAddressTransactions, RequestBlock, RequestParcel, RequestPendingParcel, RequestPendingTransaction, RequestPlatformAddressAccount, RequestTransaction } from "../../../request";
 import { ImageLoader } from "../../util/ImageLoader/ImageLoader";
+import "./Search.scss";
 
 interface State {
     inputValue: string;

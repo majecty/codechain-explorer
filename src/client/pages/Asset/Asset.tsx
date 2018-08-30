@@ -1,20 +1,20 @@
 import * as React from "react";
 import { match } from "react-router";
-import { Container, Row, Col } from "reactstrap";
+import { Col, Container, Row } from "reactstrap";
 import { Error } from "../../components/error/Error/Error";
 
-import { RequestAssetScheme, RequestTotalAssetTransactionCount } from "../../request";
+import { AssetSchemeDoc, TransactionDoc, Type } from "../../../db/DocType";
 import AssetDetails from "../../components/asset/AssetDetails/AssetDetails";
-import RequestAssetTransactions from "../../request/RequestAssetTransactions";
 import TransactionList from "../../components/transaction/TransactionList/TransactionList";
-import { TransactionDoc, AssetSchemeDoc, Type } from "../../../db/DocType";
+import { RequestAssetScheme, RequestTotalAssetTransactionCount } from "../../request";
+import RequestAssetTransactions from "../../request/RequestAssetTransactions";
 
-import "./Asset.scss"
 import { H256 } from "codechain-sdk/lib/core/H256";
+import CopyButton from "../../components/util/CopyButton/CopyButton";
 import HexString from "../../components/util/HexString/HexString";
 import { ImageLoader } from "../../components/util/ImageLoader/ImageLoader";
-import CopyButton from "../../components/util/CopyButton/CopyButton";
 import RequestPendingAssetScheme from "../../request/RequestPendingAssetScheme";
+import "./Asset.scss"
 
 interface Props {
     match: match<{ assetType: string }>;

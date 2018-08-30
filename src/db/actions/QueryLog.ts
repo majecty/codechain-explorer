@@ -1,7 +1,7 @@
+import { Client, SearchResponse } from "elasticsearch";
 import * as _ from "lodash";
-import { SearchResponse, Client } from "elasticsearch";
-import { BaseAction } from "./BaseAction";
 import { ElasticSearchAgent } from "../ElasticSearchAgent";
+import { BaseAction } from "./BaseAction";
 
 export interface LogData {
     date: string,

@@ -1,16 +1,16 @@
-import * as React from "react";
 import * as _ from "lodash";
-import { Dispatch, connect } from "react-redux";
+import * as React from "react";
+import { connect, Dispatch } from "react-redux";
 
+import { faChevronCircleDown, faChevronCircleRight } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronCircleRight, faChevronCircleDown } from '@fortawesome/free-solid-svg-icons'
 
-import { Col, Row, Popover, PopoverBody } from "reactstrap";
+import { Col, Popover, PopoverBody, Row } from "reactstrap";
 
-import "./TransactionSummary.scss"
-import { TransactionDoc, MetadataFormat, Type, AssetTransferTransactionDoc, AssetMintTransactionDoc } from "../../../../db/DocType";
-import { ImageLoader } from "../../util/ImageLoader/ImageLoader";
 import { Link } from "react-router-dom";
+import { AssetMintTransactionDoc, AssetTransferTransactionDoc, MetadataFormat, TransactionDoc, Type } from "../../../../db/DocType";
+import { ImageLoader } from "../../util/ImageLoader/ImageLoader";
+import "./TransactionSummary.scss"
 
 interface OwnProps {
     transaction: TransactionDoc;

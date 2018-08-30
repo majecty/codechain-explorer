@@ -1,11 +1,11 @@
 import * as React from "react";
-import { Row, Col } from "reactstrap";
+import { Col, Row } from "reactstrap";
 import { Progress } from 'reactstrap';
 
-import "./SyncStatus.scss";
+import { Link } from "react-router-dom";
 import { SyncData } from "../../../request/RequestSyncStatus";
 import HexString from "../../util/HexString/HexString";
-import { Link } from "react-router-dom";
+import "./SyncStatus.scss";
 
 interface Props {
     syncStatus: SyncData;

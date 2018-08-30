@@ -1,15 +1,15 @@
-import * as React from "react";
-import { Row, Col } from "reactstrap";
-import * as moment from "moment";
 import * as _ from "lodash";
+import * as moment from "moment";
+import * as React from "react";
+import { Col, Row } from "reactstrap";
 const { ResponsiveLine } = require("@nivo/line");
 const { ResponsivePie } = require("@nivo/pie");
 
-import "./Summary.scss";
-import * as emptyImage from "./img/empty.png"
-import { RequestWeeklyLogs, RequestDailyLogs, RequestBlockNumber } from "../../../request";
-import { WeeklyLogType } from "../../../request/RequestWeeklyLogs";
+import { RequestBlockNumber, RequestDailyLogs, RequestWeeklyLogs } from "../../../request";
 import { DailyLogType } from "../../../request/RequestDailyLogs";
+import { WeeklyLogType } from "../../../request/RequestWeeklyLogs";
+import * as emptyImage from "./img/empty.png"
+import "./Summary.scss";
 
 interface State {
     weeklyLogs: Array<{

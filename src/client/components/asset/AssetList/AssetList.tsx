@@ -1,11 +1,11 @@
-import * as React from "react";
 import * as _ from "lodash";
-import { Row, Col } from "reactstrap";
+import * as React from "react";
+import { Col, Row } from "reactstrap";
 
-import "./AssetList.scss";
-import { AssetBundleDoc, Type } from "../../../../db/DocType";
 import { Link } from "react-router-dom";
+import { AssetBundleDoc, Type } from "../../../../db/DocType";
 import { ImageLoader } from "../../util/ImageLoader/ImageLoader";
+import "./AssetList.scss";
 
 interface Props {
     assetBundles: AssetBundleDoc[];
